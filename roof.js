@@ -9,9 +9,9 @@ class Roof {
         World.add(world, this.body);
     }
     display() {
-        var pos = this.body.position;
+        var pos_roof = this.body.position;
         fill(195);
         rectMode(CENTER);
-        rect(pos.x, pos.y, this.width, this.height);
+        rect(pos_roof.x, pos_roof.y, this.width, this.height);
     }
 }

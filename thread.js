@@ -1,5 +1,7 @@
 class chain {
     constructor(bodya, bodyb, pointx, pointy) {
+        this.px = pointx;
+        this.py = pointy;
         var option = {
             bodyA: bodya,
             bodyB: bodyb,
@@ -7,11 +9,8 @@ class chain {
                 x: this.px,
                 y: this.py
             },
-            stiffness: 1,
-            length: 10
+            length: 100
         }
-        this.px = pointx;
-        this.py = pointy;
         this.body = Constraint.create(option);
         World.add(world, this.body);
     }
