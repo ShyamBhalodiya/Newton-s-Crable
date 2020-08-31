@@ -8,8 +8,7 @@ class chain {
             pointA: {
                 x: this.px,
                 y: this.py
-            },
-            length: 100
+            }
         }
         this.body = Constraint.create(option);
         World.add(world, this.body);
