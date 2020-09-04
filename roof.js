@@ -5,7 +5,7 @@ class Roof {
         }
         this.height = h;
         this.width = w;
-        this.body = Bodies.rectangle(x, y, height, width, options);
+        this.body = Bodies.rectangle(x, y, h, w, options);
         World.add(world, this.body);
     }
     display() {

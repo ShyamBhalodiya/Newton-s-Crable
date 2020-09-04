@@ -12,24 +12,24 @@ function preload() {
 }
 
 function setup() {
-	var canvas = createCanvas(800, 700);
+	var canvas = createCanvas(1000, 700);
 
 
 	engine = Engine.create();
 	world = engine.world;
-
+	var bobdiameter = 50;
 	//Create the Bodies Here.
-	bob1 = new bob(300, 400);
-	bob2 = new bob(350, 300);
-	bob3 = new bob(400, 300);
-	bob4 = new bob(450, 300);
-	bob5 = new bob(500, 400);
-	wall = new Roof(400, 200, 250, 20);
-	string1 = new chain(wall.body, bob1.body, -100, 0);
-	string2 = new chain(wall.body, bob2.body, -50, 0);
-	string3 = new chain(wall.body, bob3.body, 0, 0);
-	string4 = new chain(wall.body, bob4.body, 50, 0);
-	string5 = new chain(wall.body, bob5.body, 100, 0);
+	wall = new Roof(500, 200, 250, 20);
+	bob1 = new bob(400, 300, bobdiameter);
+	bob2 = new bob(450, 300, bobdiameter);
+	bob3 = new bob(500, 300, bobdiameter);
+	bob4 = new bob(550, 300, bobdiameter);
+	bob5 = new bob(600, 300, bobdiameter);
+	string1 = new chain(bob1.body, wall.body, -bobdiameter * 2, 0);
+	string2 = new chain(bob2.body, wall.body, -bobdiameter, 0);
+	string3 = new chain(bob3.body, wall.body, 0, 0);
+	string4 = new chain(bob4.body, wall.body, bobdiameter, 0);
+	string5 = new chain(bob5.body, wall.body, bobdiameter * 2, 0);
 
 	var mousey = Mouse.create(canvas.elt);
 	mousey.pixelRatio = pixelDensity();
@@ -45,8 +45,7 @@ function setup() {
 
 function draw() {
 	rectMode(CENTER);
-	background(125);
-
+	background(225);
 
 	wall.display();
 	string1.display();
@@ -61,7 +60,7 @@ function draw() {
 	bob5.display();
 
 	drawSprites();
+	fill(0);
+	textSize(18);
+	text("Use Your Mouse to pull balls", 400, 100)
 }
-
-
-

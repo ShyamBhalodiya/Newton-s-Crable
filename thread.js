@@ -5,24 +5,27 @@ class chain {
         var option = {
             bodyA: bodya,
             bodyB: bodyb,
-            pointA: {
+            pointB: {
                 x: this.px,
                 y: this.py
-            }
+            },
+            length: 400,
+            stiffness: 1
         }
-        this.body = Constraint.create(option);
-        World.add(world, this.body);
+        this.rope = Constraint.create(option);
+        World.add(world, this.rope);
     }
     display() {
-        var Pointa = this.body.bodyA.position;
-        var Pointb = this.body.bodyB.position;
+        var Pointa = this.rope.bodyA.position;
+        var Pointb = this.rope.bodyB.position;
 
         strokeWeight(2);
-        var Anchorbx = Pointb.x;
-        var Anchorby = Pointb.y;
+        var Anchorax = Pointa.x ;
+        var Anchoray = Pointa.y ;
 
-        var Anchorax = Pointa.x + this.px;
-        var Anchoray = Pointa.y + this.py;
+        var Anchorbx = Pointb.x + this.px;
+        var Anchorby = Pointb.y + this.py;
+
         line(Anchorax, Anchoray, Anchorbx, Anchorby);
     }
 }
