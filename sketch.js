@@ -60,6 +60,7 @@ function draw() {
 	bob5.display();
 
 	drawSprites();
+	
 	fill(0);
 	textSize(18);
 	text("Use Your Mouse to pull balls", 400, 100)
